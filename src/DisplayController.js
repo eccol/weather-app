@@ -2,10 +2,10 @@ export class DisplayController {
   constructor() {
     this.inputField = document.getElementById('city');
     this.currentTemp = document.querySelector('.temperature');
-    this.feelsLike = document.querySelector('.feels-like');
-    this.conditions = document.querySelector('.condition');
-    this.wind = document.querySelector('.wind');
-    this.forecast = Array.from(document.querySelectorAll('.day'));
+    this.feelsLike = document.querySelector('.feels-like .data');
+    this.conditions = document.querySelector('.condition .data');
+    this.wind = document.querySelector('.wind .data');
+    this.forecast = Array.from(document.querySelectorAll('.day .data'));
   }
 
   updateAll(data) {

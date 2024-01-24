@@ -1,20 +1,4 @@
-const API_KEY = process.env.API_KEY;
-
-async function getWeather(query) {
-  const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${query}`;
-
-  const data = await fetch(url);
-  const json = await data.json();
-  console.log(json);
-  const currentTemp = await json.current.temp_f;
-  const cityName = await json.location.name;
-  const countryName = await json.location.country;
-  return {
-    currentTemp,
-    cityName,
-    countryName,
-  };
-}
+import getWeather from './getWeather.js';
 
 function updateTemp(data) {
   const cityField = document.querySelector('.location');

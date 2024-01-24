@@ -6,10 +6,24 @@ async function getWeather(city) {
   const data = await fetch(url);
   const json = await data.json();
   const currentTemp = await json.current.temp_f;
-  console.log('current temp is', currentTemp);
+  return currentTemp;
+}
+
+function updateTemp(temp) {
+  const tempField = document.querySelector('.temperature');
+  tempField.innerText = `${temp} degress Fahrenheit`;
+}
+
+function displayError(err) {
+  const tempField = document.querySelector('.temperature');
+  tempField.innerText = `${err}`;
 }
 
 document.querySelector('button').addEventListener('click', () => {
   const city = document.getElementById('city').value;
-  getWeather(city);
+  const temp = getWeather(city);
+
+  cityField = document.querySelector('.city-name');
+  cityField.innerText = city;
+  temp.then(updateTemp, displayError);
 });

@@ -10,6 +10,7 @@ export default async function getWeather(query) {
     currentTemp: data.current.temp_f,
     cityName: data.location.name,
     countryName: data.location.country,
+    regionName: data.location.region,
     condition: data.current.condition.text,
     feelsLike: data.current.feelslike_f,
     windDir: data.current.wind_dir,

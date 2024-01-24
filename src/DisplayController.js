@@ -12,7 +12,11 @@ export class DisplayController {
   }
 
   updateAll(data) {
-    const location = `${data.cityName}, ${data.countryName}`;
+    const region =
+      data.countryName === 'United States of America'
+        ? data.regionName
+        : data.countryName;
+    const location = `${data.cityName}, ${region}`;
     this.inputField.value = location;
 
     this.currentTemp.innerText = data.currentTemp;

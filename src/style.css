@@ -45,11 +45,21 @@
 
 .temperature {
   align-self: center;
+  font-size: 10rem;
+  text-align: center;
   height: 20rem;
   width: 20rem;
   border: 1px solid black;
   border-radius: 3px;
   margin: 0.4rem 0;
+}
+
+.temperature,
+.card .header,
+.card .data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Details section */
@@ -78,6 +88,7 @@
 }
 
 .card .data {
+  font-size: 2rem;
   min-height: 5rem;
   background-color: lightgray;
 }

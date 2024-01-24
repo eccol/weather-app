@@ -9,6 +9,8 @@ export class DisplayController {
       document.querySelectorAll('.day .header'),
     );
     this.forecastData = Array.from(document.querySelectorAll('.day .data'));
+
+    this.outputContainer = document.querySelector('.output');
   }
 
   updateAll(data) {
@@ -27,15 +29,12 @@ export class DisplayController {
       this.forecastHeaders[i].innerText = data.forecastDates[i];
       this.forecastData[i].innerText = data.forecastAvg[i] + ' °F';
     }
+
+    this.outputContainer.classList.remove('hidden');
   }
 
   loadAll() {
+    this.outputContainer.classList.add('hidden');
     this.currentTemp.innerText = '🤔';
-    this.feelsLike.innerText = '';
-    this.conditions.innerText = '';
-    this.wind.innerText = '';
-    for (let i = 0; i < this.forecastData.length; i++) {
-      this.forecastData[i].innerText = '';
-    }
   }
 }

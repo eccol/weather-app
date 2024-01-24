@@ -112,3 +112,12 @@ body {
   min-height: 5rem;
   background-color: var(--card-body-color);
 }
+
+/* Display animation */
+.output {
+  transition: opacity 0.5s ease-out;
+}
+
+.hidden {
+  opacity: 0%;
+}

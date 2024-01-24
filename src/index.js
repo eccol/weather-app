@@ -1,7 +1,7 @@
 const API_KEY = process.env.API_KEY;
 
-async function getWeather(city) {
-  const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`;
+async function getWeather(query) {
+  const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${query}`;
 
   const data = await fetch(url);
   const json = await data.json();
@@ -17,7 +17,7 @@ async function getWeather(city) {
 }
 
 function updateTemp(data) {
-  const cityField = document.querySelector('.city-name');
+  const cityField = document.querySelector('.location');
   cityField.innerText = `${data.cityName}, ${data.countryName}`;
 
   const tempField = document.querySelector('.temperature');

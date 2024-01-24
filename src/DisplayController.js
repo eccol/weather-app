@@ -28,4 +28,14 @@ export class DisplayController {
       this.forecastData[i].innerText = data.forecastAvg[i] + ' °F';
     }
   }
+
+  loadAll() {
+    this.currentTemp.innerText = '🤔';
+    this.feelsLike.innerText = '';
+    this.conditions.innerText = '';
+    this.wind.innerText = '';
+    for (let i = 0; i < this.forecastData.length; i++) {
+      this.forecastData[i].innerText = '';
+    }
+  }
 }

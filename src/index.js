@@ -11,7 +11,8 @@ function displayError(err) {
 
 document.querySelector('button').addEventListener('click', () => {
   const city = document.getElementById('city').value;
-  const data = getWeather(city);
+  displayController.loadAll();
 
+  const data = getWeather(city);
   data.then((d) => displayController.updateAll(d), displayError);
 });

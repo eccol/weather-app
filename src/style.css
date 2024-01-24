@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  border: 1px solid red;
 }
 
 .container {
@@ -12,7 +13,8 @@
 
 .form {
   display: flex;
-  align-items: center;
+  max-width: 100%;
+  align-items: stretch;
   justify-content: center;
 }
 
@@ -21,14 +23,18 @@
 }
 
 .form input {
-  flex: 1 1 0;
-  max-width: 500px;
+  flex: 1 1 auto;
+  min-width: 0;
+
   border: none;
   border-bottom: solid gray 1px;
+
+  text-align: center;
   font-size: 4rem;
+  overflow: wrap;
 }
 
 .form button {
-  flex: 0;
+  flex: 0 0 auto;
   width: 3rem;
 }

@@ -38,3 +38,29 @@
   flex: 0 0 auto;
   width: 3rem;
 }
+
+/* Details section */
+
+.conditions,
+.forecast {
+  display: flex;
+}
+
+.card {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 3px 3px 0 0;
+  margin: 0 0.4rem;
+}
+
+.card .header {
+  min-height: 1.5rem;
+  background-color: gray;
+}
+
+.card .data {
+  min-height: 5rem;
+  background-color: lightgray;
+}

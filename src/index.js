@@ -9,4 +9,7 @@ async function getWeather(city) {
   console.log('current temp is', currentTemp);
 }
 
-getWeather('Orlando');
+document.querySelector('button').addEventListener('click', () => {
+  const city = document.getElementById('city').value;
+  getWeather(city);
+});

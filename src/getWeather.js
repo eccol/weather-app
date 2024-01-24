@@ -14,6 +14,11 @@ export default async function getWeather(query) {
     feelsLike: data.current.feelslike_f,
     windDir: data.current.wind_dir,
     windSpeed: data.current.wind_mph,
+    forecastDates: [
+      data.forecast.forecastday[0].date,
+      data.forecast.forecastday[1].date,
+      data.forecast.forecastday[2].date,
+    ],
     forecastAvg: [
       data.forecast.forecastday[0].day.avgtemp_f,
       data.forecast.forecastday[1].day.avgtemp_f,

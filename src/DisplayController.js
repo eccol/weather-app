@@ -5,7 +5,10 @@ export class DisplayController {
     this.feelsLike = document.querySelector('.feels-like .data');
     this.conditions = document.querySelector('.condition .data');
     this.wind = document.querySelector('.wind .data');
-    this.forecast = Array.from(document.querySelectorAll('.day .data'));
+    this.forecastHeaders = Array.from(
+      document.querySelectorAll('.day .header'),
+    );
+    this.forecastData = Array.from(document.querySelectorAll('.day .data'));
   }
 
   updateAll(data) {
@@ -16,8 +19,9 @@ export class DisplayController {
     this.feelsLike.innerText = data.feelsLike;
     this.conditions.innerText = data.condition;
     this.wind.innerText = `${data.windSpeed} ${data.windDir}`;
-    for (let i = 0; i < this.forecast.length; i++) {
-      this.forecast[i].innerText = data.forecastAvg[i];
+    for (let i = 0; i < this.forecastData.length; i++) {
+      this.forecastHeaders[i].innerText = data.forecastDates[i];
+      this.forecastData[i].innerText = data.forecastAvg[i];
     }
   }
 }

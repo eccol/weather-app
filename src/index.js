@@ -5,7 +5,7 @@ function updateTemp(data) {
   cityField.innerText = `${data.cityName}, ${data.countryName}`;
 
   const tempField = document.querySelector('.temperature');
-  tempField.innerText = `${data.currentTemp} degress Fahrenheit`;
+  tempField.innerText = `${data.currentTemp} degrees Fahrenheit`;
 }
 
 function displayError(err) {

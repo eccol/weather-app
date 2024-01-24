@@ -1,5 +1,6 @@
 import getWeather from './getWeather.js';
 import { DisplayController } from './DisplayController.js';
+import './style.css';
 
 const displayController = new DisplayController();
 

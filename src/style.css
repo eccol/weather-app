@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header section */
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form label {
+  display: none;
+}
+
+.form input {
+  flex: 1 1 0;
+  max-width: 500px;
+  border: none;
+  border-bottom: solid gray 1px;
+  font-size: 4rem;
+}
+
+.form button {
+  flex: 0;
+  width: 3rem;
+}

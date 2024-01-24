@@ -3,7 +3,9 @@
   padding: 0;
 }
 
-.container {
+.container,
+.output,
+.details {
   display: flex;
   flex-direction: column;
 }
@@ -39,7 +41,22 @@
   width: 3rem;
 }
 
+/* Temperature */
+
+.temperature {
+  align-self: center;
+  height: 20rem;
+  width: 20rem;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 0.4rem 0;
+}
+
 /* Details section */
+
+.details > .header {
+  align-self: center;
+}
 
 .conditions,
 .forecast {

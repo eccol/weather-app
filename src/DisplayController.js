@@ -5,11 +5,7 @@ export class DisplayController {
     this.feelsLike = document.querySelector('.feels-like');
     this.conditions = document.querySelector('.condition');
     this.wind = document.querySelector('.wind');
-    this.forecast = [
-      document.querySelector('.day1'),
-      document.querySelector('.day2'),
-      document.querySelector('.day3'),
-    ];
+    this.forecast = Array.from(document.querySelectorAll('.day'));
   }
 
   updateAll(data) {

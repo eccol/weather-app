@@ -16,12 +16,12 @@ export class DisplayController {
     this.inputField.value = location;
 
     this.currentTemp.innerText = data.currentTemp;
-    this.feelsLike.innerText = data.feelsLike;
+    this.feelsLike.innerText = data.feelsLike + ' °F';
     this.conditions.innerText = data.condition;
-    this.wind.innerText = `${data.windSpeed} ${data.windDir}`;
+    this.wind.innerText = `${data.windSpeed} mph ${data.windDir}`;
     for (let i = 0; i < this.forecastData.length; i++) {
       this.forecastHeaders[i].innerText = data.forecastDates[i];
-      this.forecastData[i].innerText = data.forecastAvg[i];
+      this.forecastData[i].innerText = data.forecastAvg[i] + ' °F';
     }
   }
 }

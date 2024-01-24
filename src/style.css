@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
 :root {
   --bg: lightblue;
   --card-header-color: gray;
@@ -12,6 +14,7 @@
 
 body {
   background-color: var(--bg);
+  font-family: 'Quicksand', sans-serif;
 }
 
 .container,
@@ -42,6 +45,7 @@ body {
   border-bottom: solid gray 1px;
   background-color: transparent;
   color: var(--text-color);
+  font-family: 'Quicksand', sans-serif;
 
   text-align: center;
   font-size: 4rem;

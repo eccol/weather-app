@@ -1,6 +1,6 @@
 export class DisplayController {
   constructor() {
-    this.inputField = document.getElementById('city');
+    this.inputField = document.getElementById('query');
     this.currentTemp = document.querySelector('.temperature');
     this.feelsLike = document.querySelector('.feels-like .data');
     this.conditions = document.querySelector('.condition .data');

@@ -13,15 +13,15 @@ function displayError(err) {
 
 document.querySelector('button').addEventListener('click', (ev) => {
   ev.preventDefault();
-  const city = document.getElementById('city').value;
+  const query = document.getElementById('query').value;
   displayController.loadAll();
 
-  if (city === '') {
+  if (query === '') {
     displayController.showStatus('🤷‍♀️');
     return;
   }
 
-  const apiReturn = getWeather(city);
+  const apiReturn = getWeather(query);
   apiReturn.then((d) => {
     data = d;
     displayController.updateAll(data);

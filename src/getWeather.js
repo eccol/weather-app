@@ -6,9 +6,9 @@ export default async function getWeather(query) {
   const data = await response.json();
   console.log(data);
 
-  forecast = [];
+  let forecast = [];
   for (let i = 0; i < 3; i++) {
-    daysForecast = {
+    const daysForecast = {
       date: data.forecast.forecastday[i].date,
       avgTemp: data.forecast.forecastday[i].day.avgtemp_f,
       conditions: data.forecast.forecastday[i].day.condition.text,

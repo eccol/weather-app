@@ -11,9 +11,12 @@ export class DisplayController {
     this.forecastData = Array.from(document.querySelectorAll('.day .data'));
 
     this.outputContainer = document.querySelector('.output');
+    this.status = document.querySelector('.status');
   }
 
   updateAll(data) {
+    this.status.classList.add('hidden');
+
     const region =
       data.countryName === 'United States of America'
         ? data.regionName
@@ -26,8 +29,8 @@ export class DisplayController {
     this.conditions.innerText = data.condition;
     this.wind.innerText = `${data.windSpeed} mph ${data.windDir}`;
     for (let i = 0; i < this.forecastData.length; i++) {
-      this.forecastHeaders[i].innerText = data.forecastDates[i];
-      this.forecastData[i].innerText = data.forecastAvg[i] + ' °F';
+      this.forecastHeaders[i].innerText = data.forecast[i].date;
+      this.forecastData[i].innerText = data.forecast[i].avgTemp + ' °F';
     }
 
     this.outputContainer.classList.remove('hidden');
@@ -37,6 +40,11 @@ export class DisplayController {
   loadAll() {
     this.outputContainer.classList.add('hidden');
     this.outputContainer.classList.remove('animate');
-    this.currentTemp.innerText = '🤔';
+    this.showStatus('🤔');
+  }
+
+  showStatus(status) {
+    this.status.classList.remove('hidden');
+    this.status.innerText = status;
   }
 }

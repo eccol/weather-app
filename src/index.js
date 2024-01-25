@@ -6,7 +6,8 @@ const displayController = new DisplayController();
 
 function displayError(err) {
   const tempField = document.querySelector('.temperature');
-  tempField.innerText = `${err}`;
+  displayController.showStatus('😢');
+  console.log(err);
 }
 
 document.querySelector('button').addEventListener('click', (ev) => {

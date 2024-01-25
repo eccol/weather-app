@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
-:root {
-  --bg: lightblue;
-  --card-header-color: gray;
-  --card-body-color: lightgray;
-  --text-color: white;
-}
+$bg-color: lightblue;
+$card-header-color: gray;
+$card-body-color: lightgray;
+$text-color: white;
 
 * {
   margin: 0;
@@ -14,9 +12,9 @@
 }
 
 body {
-  background-color: var(--bg);
+  background-color: $bg-color;
   font-family: 'Quicksand', sans-serif;
-  color: var(--text-color);
+  color: $text-color;
 }
 
 .container,
@@ -46,7 +44,7 @@ body {
   border: none;
   border-bottom: solid gray 1px;
   background-color: transparent;
-  color: var(--text-color);
+  color: $text-color;
   font-family: 'Quicksand', sans-serif;
 
   text-align: center;
@@ -114,13 +112,13 @@ body {
 
 .card .header {
   min-height: 1.5rem;
-  background-color: var(--card-header-color);
+  background-color: $card-header-color;
 }
 
 .card .data {
   font-size: 2rem;
   min-height: 5rem;
-  background-color: var(--card-body-color);
+  background-color: $card-body-color;
 }
 
 /* Display animation */

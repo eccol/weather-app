@@ -31,10 +31,12 @@ export class DisplayController {
     }
 
     this.outputContainer.classList.remove('hidden');
+    this.outputContainer.classList.add('animate');
   }
 
   loadAll() {
     this.outputContainer.classList.add('hidden');
+    this.outputContainer.classList.remove('animate');
     this.currentTemp.innerText = '🤔';
   }
 }

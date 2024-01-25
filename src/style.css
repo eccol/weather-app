@@ -114,7 +114,7 @@ body {
 }
 
 /* Display animation */
-.output {
+.output.animate {
   transition: opacity 0.5s ease-out;
 }
 

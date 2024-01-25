@@ -139,6 +139,10 @@ body {
   animation: status 1s ease-in-out infinite alternate;
 }
 
+.status.hidden {
+  display: none;
+}
+
 @keyframes status {
   from {
     transform: translateY(-6px);

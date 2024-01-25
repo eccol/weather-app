@@ -16,6 +16,11 @@ document.querySelector('button').addEventListener('click', (ev) => {
   const city = document.getElementById('city').value;
   displayController.loadAll();
 
+  if (city === '') {
+    displayController.showStatus('🤷‍♀️');
+    return;
+  }
+
   const apiReturn = getWeather(city);
   apiReturn.then((d) => {
     data = d;

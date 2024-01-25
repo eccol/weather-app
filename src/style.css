@@ -91,6 +91,7 @@ body {
 .conditions,
 .forecast {
   display: flex;
+  justify-content: center;
 }
 
 .card {

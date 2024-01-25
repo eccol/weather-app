@@ -3,6 +3,7 @@ import { DisplayController } from './DisplayController.js';
 import './style.css';
 
 const displayController = new DisplayController();
+let data;
 
 function displayError(err) {
   const tempField = document.querySelector('.temperature');
@@ -15,6 +16,13 @@ document.querySelector('button').addEventListener('click', (ev) => {
   const city = document.getElementById('city').value;
   displayController.loadAll();
 
-  const data = getWeather(city);
-  data.then((d) => displayController.updateAll(d), displayError);
+  const apiReturn = getWeather(city);
+  apiReturn.then((d) => {
+    data = d;
+    displayController.updateAll(data);
+  }, displayError);
+});
+
+document.getElementById('celsius').addEventListener('change', () => {
+  if (data) displayController.updateAll(data);
 });

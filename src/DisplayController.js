@@ -12,10 +12,14 @@ export class DisplayController {
 
     this.outputContainer = document.querySelector('.output');
     this.status = document.querySelector('.status');
+
+    this.celsius = document.getElementById('celsius');
   }
 
   updateAll(data) {
     this.status.classList.add('hidden');
+    const celsius = this.celsius.checked ? 1 : 0;
+    const tempUnit = celsius ? '°C' : '°F';
 
     const region =
       data.countryName === 'United States of America'
@@ -24,13 +28,14 @@ export class DisplayController {
     const location = `${data.cityName}, ${region}`;
     this.inputField.value = location;
 
-    this.currentTemp.innerText = data.currentTemp;
-    this.feelsLike.innerText = data.feelsLike + ' °F';
+    this.currentTemp.innerText = data.currentTemp[celsius];
+    this.feelsLike.innerText = data.feelsLike[celsius] + ` ${tempUnit}`;
     this.conditions.innerText = data.condition;
     this.wind.innerText = `${data.windSpeed} mph ${data.windDir}`;
     for (let i = 0; i < this.forecastData.length; i++) {
       this.forecastHeaders[i].innerText = data.forecast[i].date;
-      this.forecastData[i].innerText = data.forecast[i].avgTemp + ' °F';
+      this.forecastData[i].innerText =
+        data.forecast[i].avgTemp[celsius] + ` ${tempUnit}`;
     }
 
     this.outputContainer.classList.remove('hidden');

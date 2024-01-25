@@ -40,10 +40,15 @@ export class DisplayController {
   loadAll() {
     this.outputContainer.classList.add('hidden');
     this.outputContainer.classList.remove('animate');
-    this.showStatus('🤔');
+    this.showStatus('🤔', true);
   }
 
-  showStatus(status) {
+  showStatus(status, animate = false) {
+    if (animate) {
+      this.status.classList.add('animate');
+    } else {
+      this.status.classList.remove('animate');
+    }
     this.status.classList.remove('hidden');
     this.status.innerText = status;
   }

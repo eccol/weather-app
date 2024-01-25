@@ -134,3 +134,16 @@ body {
   opacity: 0%;
   transform: translateY(10px);
 }
+
+.status.animate {
+  animation: status 1s ease-in-out infinite alternate;
+}
+
+@keyframes status {
+  from {
+    transform: translateY(-6px);
+  }
+  to {
+    transform: translateY(6px);
+  }
+}

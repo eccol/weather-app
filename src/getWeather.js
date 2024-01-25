@@ -6,6 +6,16 @@ export default async function getWeather(query) {
   const data = await response.json();
   console.log(data);
 
+  forecast = [];
+  for (let i = 0; i < 3; i++) {
+    daysForecast = {
+      date: data.forecast.forecastday[i].date,
+      avgTemp: data.forecast.forecastday[i].day.avgtemp_f,
+      conditions: data.forecast.forecastday[i].day.condition.text,
+    };
+    forecast.push(daysForecast);
+  }
+
   return {
     currentTemp: data.current.temp_f,
     cityName: data.location.name,
@@ -15,15 +25,6 @@ export default async function getWeather(query) {
     feelsLike: data.current.feelslike_f,
     windDir: data.current.wind_dir,
     windSpeed: data.current.wind_mph,
-    forecastDates: [
-      data.forecast.forecastday[0].date,
-      data.forecast.forecastday[1].date,
-      data.forecast.forecastday[2].date,
-    ],
-    forecastAvg: [
-      data.forecast.forecastday[0].day.avgtemp_f,
-      data.forecast.forecastday[1].day.avgtemp_f,
-      data.forecast.forecastday[2].day.avgtemp_f,
-    ],
+    forecast: forecast,
   };
 }

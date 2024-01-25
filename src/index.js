@@ -3,10 +3,10 @@ import { DisplayController } from './DisplayController.js';
 import './style.scss';
 
 const displayController = new DisplayController();
-let data;
+let data = {};
 
 function displayError(err) {
-  const tempField = document.querySelector('.temperature');
+  data = {};
   displayController.showStatus('😢');
   console.log(err);
 }
@@ -24,5 +24,5 @@ document.querySelector('button').addEventListener('click', (ev) => {
 });
 
 document.getElementById('celsius').addEventListener('change', () => {
-  if (data) displayController.updateAll(data);
+  if (Object.keys(data).length != 0) displayController.updateAll(data);
 });

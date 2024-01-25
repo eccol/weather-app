@@ -4,6 +4,7 @@ $bg-color: lightblue;
 $card-header-color: gray;
 $card-body-color: lightgray;
 $text-color: white;
+$breakpoint: 600px;
 
 * {
   margin: 0;
@@ -152,7 +153,7 @@ body {
 
 /* Mobile layout */
 
-@media (max-width: 600px) {
+@media (max-width: $breakpoint) {
   .conditions,
   .forecast {
     flex-direction: column;

@@ -9,7 +9,8 @@ function displayError(err) {
   tempField.innerText = `${err}`;
 }
 
-document.querySelector('button').addEventListener('click', () => {
+document.querySelector('button').addEventListener('click', (ev) => {
+  ev.preventDefault();
   const city = document.getElementById('city').value;
   displayController.loadAll();
 

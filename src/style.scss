@@ -1,3 +1,4 @@
+@import './slider';
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
 $bg-color: lightblue;
@@ -47,10 +48,6 @@ body {
     font-size: 4rem;
     overflow: wrap;
     text-overflow: ellipsis;
-  }
-
-  #celsius {
-    min-width: 30px;
   }
 
   button {
@@ -129,6 +126,7 @@ body {
   left: 30%;
   height: 200px;
   width: 200px;
+  padding: 1rem;
 
   animation: dialog-appearance 0.2s cubic-bezier(0.42, 0, 0.66, 1.37) forwards;
 }

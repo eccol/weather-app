@@ -1,4 +1,5 @@
 const API_KEY = process.env.API_KEY;
+`please don't steal my api key 🥺`;
 
 export default async function getWeather(query) {
   const url = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${query}&days=3`;

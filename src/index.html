@@ -11,8 +11,8 @@
     <form class="form">
       <label for="query">Location:</label>
       <input type="text" name="query" id="query" placeholder="Location">
-      <button type="submit">Go</button>
-      <input type="checkbox" name="celsius" id="celsius">
+      <button type="submit" id="submit-button">Go</button>
+      <button type="button" id="options-button">Options</button>
     </form>
     <div class="status hidden"></div>
     <div class="output hidden">
@@ -50,6 +50,12 @@
       </div>
     </div>
   </div>
+
+  <dialog id="options">
+    <button type="button" class="close">X</button>
+    <label for="celsius">F/C</label>
+    <input type="checkbox" name="celsius" id="celsius">
+  </dialog>
   
 </body>
 </html>

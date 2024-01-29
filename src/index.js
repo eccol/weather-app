@@ -2,6 +2,7 @@ import getWeather from './getWeather.js';
 import { DisplayController } from './DisplayController.js';
 import './style.scss';
 
+const modal = document.getElementById('options');
 const displayController = new DisplayController();
 let data = {};
 
@@ -11,7 +12,22 @@ function displayError(err) {
   console.log(err);
 }
 
-document.querySelector('button').addEventListener('click', (ev) => {
+document.getElementById('options-button').addEventListener('click', () => {
+  modal.classList = 'open';
+  modal.showModal();
+});
+
+document.querySelector('.close').addEventListener('click', () => {
+  modal.classList.add('close');
+  modal.addEventListener('animationend', () => {
+    if (modal.classList.contains('close')) {
+      modal.classList.remove('close');
+      modal.close();
+    }
+  });
+});
+
+document.getElementById('submit-button').addEventListener('click', (ev) => {
   ev.preventDefault();
   const query = document.getElementById('query').value;
   displayController.loadAll();

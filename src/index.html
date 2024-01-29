@@ -10,9 +10,18 @@
   <div class="container">
     <form class="form">
       <input type="text" name="query" id="query" placeholder="Location" aria-label="Location">
-      <button type="submit" id="submit-button">Go</button>
-      <button type="button" id="options-button">Options</button>
+      <button type="submit" id="submit-button">
+        <span class="material-symbols-outlined">
+        send
+        </span>
+      </button>
+      <button type="button" id="options-button">
+        <span class="material-symbols-outlined">
+        settings
+        </span>
+      </button>
     </form>
+
     <div class="status hidden"></div>
     <div class="output hidden">
       <div class="temperature"></div>
@@ -51,7 +60,11 @@
   </div>
 
   <dialog id="options">
-    <button type="button" class="close">X</button>
+    <button type="button" class="close">
+      <span class="material-symbols-outlined">
+        close
+      </span>
+    </button>
     <span>F</span>
     <label class="switch">
       <input type="checkbox" name="celsius" id="celsius" aria-label="Enable Celsius">

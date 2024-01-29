@@ -33,7 +33,12 @@ export class DisplayController {
     this.conditions.innerText = data.condition;
     this.wind.innerText = `${data.windSpeed} mph ${data.windDir}`;
     for (let i = 0; i < this.forecastData.length; i++) {
-      this.forecastHeaders[i].innerText = data.forecast[i].date;
+      const date = new Date(data.forecast[i].date);
+      const weekday = date.toLocaleDateString('us-EN', {
+        weekday: 'long',
+        timeZone: 'UTC',
+      });
+      this.forecastHeaders[i].innerText = weekday;
       this.forecastData[i].innerText =
         data.forecast[i].avgTemp[celsius] + ` ${tempUnit}`;
     }
